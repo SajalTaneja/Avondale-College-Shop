@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Avondale College Shop</title>
+    <title>@ViewData["Title"] - Avondale College Shop </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Avondale_College_Shop.styles.css" asp-append-version="true" />
@@ -13,12 +13,12 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <img src="~/images/avcol_logo_2020_pmb_horizontal on white_.webp" />
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Avondale_College_Shop</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Avondale College Shop </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="topnav-centered">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
@@ -27,7 +27,15 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Yr9">Year 9</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Yr9">Year 9-10</a>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Yr11">Year 11-13</a>
+                            </li>
+                        <li class="nav-item">
+                            <img src="~/images/search.png" style="float:right;width:25px;height:25px;" />
+                        </li>
+                        <li class="nav-item">
+                            <img src="~/images/cart.png" style="float:right;width:25px;height:25px;"/>
                         </li>
                     </ul>
                 </div>
@@ -42,7 +50,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - Avondale_College_Shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; 2023 - Avondale College Shop - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
