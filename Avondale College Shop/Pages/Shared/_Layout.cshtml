@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Avcol_Colleg_shop</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Avondale College Shop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                                Clothing
+                                Year 9-10
 
                             </a>
 
@@ -36,40 +36,40 @@
 
                                 <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="JuniorBoys">Junior Boys</a></li>
 
-                                <li><a class="dropdown-item" aria-currnet="page" asp-controller="Home" asp-action="ShopWomenClothing">Shop Women Clothing</a></li>
+                                <li><a class="dropdown-item" aria-currnet="page" asp-controller="Home" asp-action="JuniorGirls">Junior Girls</a></li>
                             </ul>
 
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                                Fragrances
+                                Year 9-10
 
                             </a>
 
                             <ul class="dropdown-menu">
 
-                                <li><a>class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="Accessories"Accessories</a></li>
+                                <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="Senior_Boys">Senior Boys</a></li>
 
-                                <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="ShopWomenFragrances">Shop Women Fragrances</a></li>
+                                <li><a class="dropdown-item" aria-currnet="page" asp-controller="Home" asp-action="Senior_Girls">Senior Girls</a></li>
+                            </ul>
 
                         </li>
-                    </ul>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                            Essentials
+                            Accessories
 
                         </a>
 
                         <ul class="dropdown-menu">
 
-                            <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="PrayerMats">Prayer Mats</a></li>
+                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-page="/Index">Blazer and Tie</a></li>
 
-                            <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="MensCaps">Mens Caps</a></li>
+                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-page="/Index">Socks</a></li>
 
-                            <li><a class="dropdown-item" aria-currenr="page" asp-controller="Home" asp-action="WomenHijabs">Women Hijabs</a></li>
+                            <li><a class="dropdown-item" aria-currenr="page" asp-controller="Home" asp-action="Accessories">Jersey</a></li>
 
-                            <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="OtherItems">Other Items</a></li>
+                            <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="Accessories">Jacket</a></li>
 
                     </li>
                     </ul>
@@ -80,15 +80,19 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                <a class="nav-link text-dark" asp-area=""  asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
             </div>
+                <div class="topnav">
+                    
+                    <input type="text" placeholder="Search..">
+                     <button type="submit">Submit</button>
+                </div>
+                </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
