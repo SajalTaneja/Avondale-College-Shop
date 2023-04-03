@@ -21,78 +21,87 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" asp-controller="Home" asp-action="Index" style="color: black;">Home</a>
 
-                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
                                 Year 9-10
-
-                            </a>
-
-                            <ul class="dropdown-menu">
-
-                                <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="JuniorBoys">Junior Boys</a></li>
-
-                                <li><a class="dropdown-item" aria-currnet="page" asp-controller="Home" asp-action="JuniorGirls">Junior Girls</a></li>
-                            </ul>
-
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                                Year 9-10
-
-                            </a>
-
-                            <ul class="dropdown-menu">
-
-                                <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="Senior_Boys">Senior Boys</a></li>
-
-                                <li><a class="dropdown-item" aria-currnet="page" asp-controller="Home" asp-action="Senior_Girls">Senior Girls</a></li>
-                            </ul>
-
-                        </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
-                            Accessories
 
                         </a>
-
                         <ul class="dropdown-menu">
 
-                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-page="/Index">Blazer and Tie</a></li>
 
-                                <li><a class="dropdown-item" aria-current="page" asp-area="" asp-page="/Index">Socks</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Senior_Girls">Senior Girls</a>
+                            </li>
 
-                            <li><a class="dropdown-item" aria-currenr="page" asp-controller="Home" asp-action="Accessories">Jersey</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Senior_Boys">Senior Boys</a>
+                            </li>
+                        </ul>
 
-                            <li><a class="dropdown-item" aria-current="page" asp-controller="Home" asp-action="Accessories">Jacket</a></li>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                Year 11-13
 
-                    </li>
-                    </ul>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" asp-controller="Home" asp-action="About" style="color:black">About</a>
+                            </a>
 
-                    </li>
+                            <ul class="dropdown-menu">
 
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        
-                        <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area=""  asp-page="/Privacy">Privacy</a>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Senior_Girls">Senior Girls</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Senior_Boys">Senior Boys</a>
+                                </li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+                                Accessories
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Accessories">Blazer and Tie</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Accessories">Jersey</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Accessories">Jacket</a>
+
+                                </li>
+
                         </li>
                     </ul>
+
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-            </div>
                 <div class="topnav">
-                    
+
                     <input type="text" placeholder="Search..">
-                     <button type="submit">Submit</button>
+                    <button type="submit">Submit</button>
                 </div>
-                </nav>
+        </nav>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
