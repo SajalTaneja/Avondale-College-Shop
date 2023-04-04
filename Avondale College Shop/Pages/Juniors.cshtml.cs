@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Avondale_College_Shop.Pages.Shared
+namespace Avondale_College_Shop.Pages
 {
-    public class AccessoriesModel : PageModel
+    public class JuniorsModel : PageModel
     {
         public void OnGet()
         {
