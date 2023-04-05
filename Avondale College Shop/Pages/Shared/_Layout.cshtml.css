@@ -56,7 +56,7 @@ button.accept-policy {
 }
 
 .dropdown-item:hover {
-    background-color: lightsalmon;
+    background-color: lightgrey;
     color: grey;
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #808080;
   color: lightgrey;
 }
 
