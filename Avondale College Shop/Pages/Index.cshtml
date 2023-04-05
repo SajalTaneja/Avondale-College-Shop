@@ -3,6 +3,45 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <div class="container body-container">
+        <div id="myCarousel" class="carousel slide body-container" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/images/capture.png" alt="Capture" style="width:100%; height:50%;"/>
+                </div>
+
+                <div class="item">
+                <img src="~/images/college shop size guide.webp" alt="College Shop Size Guide" style="width:100%; height:10%;"/>
+                </div>
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
 
 <div class="text-center">
     <h1 class="display-4">Avondale College</h1>
@@ -10,28 +49,24 @@
         <h1> We Wear Unifrom With Pride  </h1>
     </p>
 </div>
-<marquee behavior="scroll" direction="left">
-    <img src="~/images/capture.png" alt="College shop Photo" />
-    <img src="~/images/college shop size guide.webp" style="float:left" />
 
-  </marquee>
 
 
 <div class="text-center">
 
-    <p>
+    <h2>
         Our uniform is available exclusively from our College Shop.
-    </p>
-        <p style= "font-size: 100%;">
+    </h2>
+        <h3 style= "font-size: 100%;">
         The Avondale College Shop is open Monday to Friday during term time, from 8.15 am - 1.30 pm,
         selling the Avondale College uniform and some stationery items.
         The shop is located in the main Atrium building (Victor Street entrance).
         EFTPOS facilities are available (AMEX not accepted).
-        </p>
+        </h3>
 
-        <p>
+        <h4>
         Should your family require a WINZ quote, or if you need further information, please contact :
         Leslie Negre, collegeshop@avcol.school.nz, telephone 820 1734.
-        </p>
+        </h4>
 
 </div> 
