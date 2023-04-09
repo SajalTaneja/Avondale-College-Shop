@@ -18,4 +18,3 @@ namespace Avondale_College_Shop.Pages
         }
     }
 }
-       
