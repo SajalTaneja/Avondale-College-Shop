@@ -98,9 +98,8 @@
 
                     </ul>
 
-                </div>
             </div>
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; color: black; background-color:lightgrey">Login</button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto; color: black;">Login</button>
             <div id="id01" class="modal">
 
                 <form class="modal-content animate" action="/action_page.php" method="post">
@@ -116,23 +115,29 @@
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
 
-                        <button type="submit">Login</button>
+                        <button style="background-color:lightgrey; color:black" type="submit">Login</button>
                         <label>
                             <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
                     </div>
 
                     <div class="container" style="background-color: lightgrey">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <button style="background-color:lightgrey; color:black" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                         <span class="psw">Forgot <a href="#">password?</a></span>
                     </div>
                 </form>
             </div>
+
+            <ul class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Checkout">Checkout</a>
+            </ul>
+
             <div class="topnav">
 
                 <input type="text" placeholder="Search..">
                 <button type;"submit"; style="background-color:lightgrey; color:black ">Submit</button>
             </div>
+        </div>
         </nav>
     </header>
     <div class="container body-container">
@@ -152,5 +157,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

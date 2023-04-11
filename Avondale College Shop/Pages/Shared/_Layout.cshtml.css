@@ -100,10 +100,11 @@ body {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  position:fixed;
 }
 
 .topnav a:hover {
-  background-color: #808080;
+  background-color: lightgrey;
   color: lightgrey;
 }
 
@@ -135,7 +136,7 @@ body {
 }
 
 .topnav .search-container button:hover {
-  background-color: mintcream;
+  background-color: lightgrey;
 }
 
 @media screen and (max-width: 600px) {
@@ -145,7 +146,7 @@ body {
   .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
-    text-align: left;
+    text-align: center;
     width: 100%;
     margin: 0;
     padding: 14px;
@@ -154,6 +155,7 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -166,8 +168,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: grey;
-    color: grey;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -183,7 +184,7 @@ button {
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
-    background-color: grey;
+    background-color: lightgray;
 }
 
 /* Center the image and position the close button */
