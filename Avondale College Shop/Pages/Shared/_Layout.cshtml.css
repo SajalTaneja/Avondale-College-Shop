@@ -5,11 +5,13 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  position: page
 }
 
 a {
   color: #0077cc;
 }
+
 
 .btn-primary {
   color: #fff;
@@ -90,6 +92,7 @@ body {
 .topnav {
   overflow: hidden;
   background-color: white;
+  align-content: center
 }
 
 .topnav a {
@@ -122,6 +125,7 @@ body {
   margin-top: 8px;
   font-size: 17px;
   border: none;
+  position: initial
 }
 
 .topnav .search-container button {
