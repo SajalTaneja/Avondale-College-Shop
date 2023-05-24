@@ -20,7 +20,18 @@ public class AvondaleDbContext : IdentityDbContext<AvondaleCollegeShopUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
 
-        
+        builder.ApplyConfiguration(new ApplicationUserEntityConfiguration());
 
     }
+
+    private class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<AvondaleCollegeShopUser>
+    {
+        public void Configure(EntityTypeBuilder<AvondaleCollegeShopUser> builder)
+        {
+            builder.Property(u => u.FirstName).HasMaxLength(155);
+            builder.Property(u => u.FirstName).HasMaxLength(155);
+
+        }
+    }
 }
+
