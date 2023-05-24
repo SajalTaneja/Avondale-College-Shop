@@ -7,7 +7,7 @@ var connectionString = builder.Configuration.GetConnectionString("AvondaleDbCont
 builder.Services.AddDbContext<AvondaleDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<AvondaleCollegeShopUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<AvondaleCollegeShopUser>(options => options.SignIn.RequireConfirmedAccount = false)
     .AddEntityFrameworkStores<AvondaleDbContext>();
 
 // Add services to the container.
