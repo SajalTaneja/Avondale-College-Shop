@@ -1,4 +1,4 @@
-﻿namespace Avondale_College_Shop.Pages.Shared.Models
+﻿namespace Avondale_College_Shop.Models
 {
     public class Product
     {

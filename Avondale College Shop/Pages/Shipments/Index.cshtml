@@ -1,0 +1,60 @@
+﻿@page
+@model Avondale_College_Shop.Pages.Shipments.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].CardChargeTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].PackingCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].ShipOrderTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Shipment[0].OrderNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Shipment) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardChargeTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackingCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipOrderTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ShipmentID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ShipmentID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ShipmentID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

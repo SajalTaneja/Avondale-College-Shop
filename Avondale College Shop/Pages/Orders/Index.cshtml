@@ -1,0 +1,66 @@
+﻿@page
+@model Avondale_College_Shop.Pages.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ToStreet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ToCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ToZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ShipDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].ProductId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShipDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.OrderID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.OrderID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.OrderID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

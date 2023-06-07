@@ -1,4 +1,4 @@
-﻿namespace Avondale_College_Shop.Pages.Shared.Models
+﻿namespace Avondale_College_Shop.Models
 {
     public class Customer
     {
@@ -7,8 +7,8 @@
         public string LastName { get; set; }
         public string Street { get; set; }
         public string City { get; set; }
-        public string  Zip { get; set; }
-        public string  Phone { get; set; }
+        public int Zip { get; set; }
+        public int Phone { get; set; }
 
         public ICollection<Order> OrderID { get; set; }
     }

@@ -1,15 +1,15 @@
-﻿namespace Avondale_College_Shop.Pages.Shared.Models
+﻿namespace Avondale_College_Shop.Models
 {
     public class Shipment
     {
         public int ShipmentID { get; set; }
-        public string CardChargeTime { get; set; }
+        public DateTime CardChargeTime { get; set; }
         public string PackingCode { get; set; }
         public string ShipOrderTime { get; set; }
         public string ProductId { get; set; }
-        public string OrderNumber { get; set; }
+        public int OrderNumber { get; set; }
 
         public ICollection<Order> OrderID { get; set; }
-        public ICollection <Product> ProductID { get; set; }
+        public ICollection<Product> ProductID { get; set; }
     }
 }

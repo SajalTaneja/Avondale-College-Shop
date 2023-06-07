@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Avondale_College_Shop.Models;
 
 namespace Avondale_College_Shop.Areas.Identity.Data;
 
@@ -33,5 +34,13 @@ public class AvondaleDbContext : IdentityDbContext<AvondaleCollegeShopUser>
 
         }
     }
+
+    public DbSet<Avondale_College_Shop.Models.Customer>? Customer { get; set; }
+
+    public DbSet<Avondale_College_Shop.Models.Order>? Order { get; set; }
+
+    public DbSet<Avondale_College_Shop.Models.Product>? Product { get; set; }
+
+    public DbSet<Avondale_College_Shop.Models.Shipment>? Shipment { get; set; }
 }
 
