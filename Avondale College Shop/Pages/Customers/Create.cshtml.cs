@@ -31,7 +31,7 @@ namespace Avondale_College_Shop.Pages.Shared
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Customer == null || Customer == null)
+          if (ModelState.IsValid || _context.Customer == null || Customer == null)
             {
                 return Page();
             }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Avondale_College_Shop.Pages.Shared
 {
@@ -20,6 +21,14 @@ namespace Avondale_College_Shop.Pages.Shared
         }
 
         public IList<Customer> Customer { get;set; } = default!;
+
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+
+        public SelectList? FirstName { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? CustomerFirstName { get; set; }
 
         public async Task OnGetAsync()
         {
