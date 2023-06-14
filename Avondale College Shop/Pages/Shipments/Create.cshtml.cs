@@ -31,7 +31,7 @@ namespace Avondale_College_Shop.Pages.Shipments
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (ModelState.IsValid || _context.Shipment == null || Shipment == null)
+          if (!ModelState.IsValid || _context.Shipment == null || Shipment == null)
             {
                 return Page();
             }
