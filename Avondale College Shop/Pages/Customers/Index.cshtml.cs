@@ -21,14 +21,23 @@ namespace Avondale_College_Shop.Pages.Shared
         }
 
         public IList<Customer> Customer { get;set; } = default!;
-
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+        public SelectList? FirstName { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string? CustomerName { get; set; }
 
         public async Task OnGetAsync()
         {
-            if (_context.Customer != null)
+            var customers = from m in _context.Customer
+                         select m;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Customer = await _context.Customer.ToListAsync();
+                customers = customers.Where(s => s.FirstName.Contains(SearchString));
             }
+
+            Customer = await customers.ToListAsync();
         }
+
     }
 }
