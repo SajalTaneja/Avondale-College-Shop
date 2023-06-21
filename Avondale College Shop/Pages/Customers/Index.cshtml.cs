@@ -38,6 +38,35 @@ namespace Avondale_College_Shop.Pages.Shared
 
             Customer = await customers.ToListAsync();
         }
+          public string NameSort { get; set; }
+    public string DateSort { get; set; }
+    public string CurrentFilter { get; set; }
+    public string CurrentSort { get; set; }
+
+    
+
+    public async Task OnGetAsync(string sortOrder)
+    {
+        // using System;
+        NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+        DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
+        IQueryable<Customer> customersIQ = from s in _context.Customer
+                                        select s;
+
+        switch (sortOrder)
+        {
+            case "name_desc":
+                customersIQ = customersIQ.OrderByDescending(s => s.LastName);
+                break;
+              
+            default:
+                customersIQ = customersIQ.OrderBy(s => s.LastName);
+                break;
+        }
+
+        Customer = await customersIQ.AsNoTracking().ToListAsync();
+    }
 
     }
 }
