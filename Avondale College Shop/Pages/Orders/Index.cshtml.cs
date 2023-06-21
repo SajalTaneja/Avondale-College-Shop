@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Avondale_College_Shop.Pages.Orders
 {
@@ -20,13 +21,22 @@ namespace Avondale_College_Shop.Pages.Orders
         }
 
         public IList<Order> Order { get;set; } = default!;
+        [BindProperty(SupportsGet = true)]
+        public string? SearchString { get; set; }
+        public SelectList? Suburb { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public string? OrderSuburb { get; set; }
 
         public async Task OnGetAsync()
         {
-            if (_context.Order != null)
+            var orders = from m in _context.Order
+                            select m;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                Order = await _context.Order.ToListAsync();
+                orders = orders.Where(s => s.Suburb.Contains(SearchString));
             }
+
+            Order = await orders.ToListAsync();
         }
     }
 }

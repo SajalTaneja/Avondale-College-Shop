@@ -25,6 +25,11 @@
                 <span asp-validation-for="Order.ToStreet" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Order.Suburb" class="control-label"></label>
+                <input asp-for="Order.Suburb" class="form-control" />
+                <span asp-validation-for="Order.Suburb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Order.ToCity" class="control-label"></label>
                 <input asp-for="Order.ToCity" class="form-control" />
                 <span asp-validation-for="Order.ToCity" class="text-danger"></span>
