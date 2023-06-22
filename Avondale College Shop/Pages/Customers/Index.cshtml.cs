@@ -27,18 +27,8 @@ namespace Avondale_College_Shop.Pages.Shared
         [BindProperty(SupportsGet = true)]
         public string? CustomerName { get; set; }
 
-        public async Task OnGetAsync()
-        {
-            var customers = from m in _context.Customer
-                         select m;
-            if (!string.IsNullOrEmpty(SearchString))
-            {
-                customers = customers.Where(s => s.FirstName.Contains(SearchString));
-            }
 
-            Customer = await customers.ToListAsync();
-        }
-          public string NameSort { get; set; }
+    public string NameSort { get; set; }
     public string DateSort { get; set; }
     public string CurrentFilter { get; set; }
     public string CurrentSort { get; set; }
@@ -49,7 +39,6 @@ namespace Avondale_College_Shop.Pages.Shared
     {
         // using System;
         NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-        DateSort = sortOrder == "Date" ? "date_desc" : "Date";
 
         IQueryable<Customer> customersIQ = from s in _context.Customer
                                         select s;
