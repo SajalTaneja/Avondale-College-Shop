@@ -8,9 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Avondale_College_Shop.Pages.Orders
 {
+    [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly Avondale_College_Shop.Areas.Identity.Data.AvondaleDbContext _context;

@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Avondale_College_Shop.Pages.Shared
   
 {
-    [Authorize (Roles ="Admin")]
+    
     public class IndexModel : PageModel
     {
         private readonly Avondale_College_Shop.Areas.Identity.Data.AvondaleDbContext _context;
