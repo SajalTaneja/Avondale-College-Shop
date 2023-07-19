@@ -17,7 +17,7 @@ namespace Avondale_College_Shop
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddIdentity<AvondaleCollegeShopUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddRoles<AvondaleCollegeShopUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AvondaleDbContext>().AddDefaultTokenProviders();
 
             // Add services to the container.
@@ -66,7 +66,7 @@ namespace Avondale_College_Shop
                 string Eemail = "employee@avondalecollege.com";
                 string Epassword = "Employee123$";
 
-                if(await userManager.FindByEmailAsync(Aemail) == null)
+                if (await userManager.FindByEmailAsync(Aemail) == null)
                 {
                     var user = new AvondaleCollegeShopUser();
                     user.UserName = Aemail;
@@ -90,7 +90,7 @@ namespace Avondale_College_Shop
                 }
 
             }
-                app.Run();
+            app.Run();
 
         }
     }

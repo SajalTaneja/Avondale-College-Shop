@@ -13,4 +13,3 @@ public class AvondaleCollegeShopUser : IdentityUser
     public string LastName { get; set; }
 
 }
-
