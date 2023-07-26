@@ -1,80 +1,78 @@
 ﻿@page
-@model Avondale_College_Shop.Pages.Shared.IndexModel
+@model Avondale_College_Shop.Pages.Customers.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Customers</h1>
+<h1>Index</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
-<form asp-page="./Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by name:
-            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-primary" /> |
-            <a asp-page="./Index">Back to full List</a>
-        </p>
-    </div>
-</form>
-
 <table class="table">
     <thead>
         <tr>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
-                    @Html.DisplayNameFor(model => model.Customers[0].FirstName)
-                </a>
+                @Html.DisplayNameFor(model => model.Customer[0].FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].LastName)
+                @Html.DisplayNameFor(model => model.Customer[0].LastName)
             </th>
             <th>
-                    @Html.DisplayNameFor(model => model.Customers[0].Street)
+                @Html.DisplayNameFor(model => model.Customer[0].Street)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].City)
+                @Html.DisplayNameFor(model => model.Customer[0].Suburb)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Zip)
+                @Html.DisplayNameFor(model => model.Customer[0].City)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Customers[0].Phone)
+                @Html.DisplayNameFor(model => model.Customer[0].Zip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer[0].Email)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Customers)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Street)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.City)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Zip)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item">Delete</a>
-                </td>
-            </tr>
-        }
+@foreach (var item in Model.Customer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Suburb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CustomerID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CustomerID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CustomerID">Delete</a>
+            </td>
+        </tr>
+}
     </tbody>
 </table>

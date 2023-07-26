@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
 
-namespace Avondale_College_Shop.Pages.Shared
+namespace Avondale_College_Shop.Pages.Customers
 {
     public class DetailsModel : PageModel
     {

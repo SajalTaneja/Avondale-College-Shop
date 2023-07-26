@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
 
-namespace Avondale_College_Shop.Pages.Shared
+namespace Avondale_College_Shop.Pages.Customers
 {
     public class CreateModel : PageModel
     {
@@ -31,7 +31,7 @@ namespace Avondale_College_Shop.Pages.Shared
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (ModelState.IsValid || _context.Customer == null || Customer == null)
+          if (!ModelState.IsValid || _context.Customer == null || Customer == null)
             {
                 return Page();
             }
