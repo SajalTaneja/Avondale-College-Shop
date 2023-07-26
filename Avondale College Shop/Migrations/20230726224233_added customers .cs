@@ -4,7 +4,7 @@
 
 namespace Avondale_College_Shop.Migrations
 {
-    public partial class addingsorting : Migration
+    public partial class addedcustomers : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

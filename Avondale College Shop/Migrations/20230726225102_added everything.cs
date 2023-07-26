@@ -4,7 +4,7 @@
 
 namespace Avondale_College_Shop.Migrations
 {
-    public partial class Scaffolded_Items : Migration
+    public partial class addedeverything : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

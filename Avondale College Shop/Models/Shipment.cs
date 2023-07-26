@@ -6,7 +6,6 @@
         public DateTime CardChargeTime { get; set; }
         public string PackingCode { get; set; }
         public DateTime ShipOrderTime { get; set; }
-        public string ProductId { get; set; }
         public string OrderNumber { get; set; }
 
         public ICollection<Order> OrderID { get; set; }

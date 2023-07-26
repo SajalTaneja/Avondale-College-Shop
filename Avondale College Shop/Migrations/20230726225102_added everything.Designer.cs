@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avondale_College_Shop.Migrations
 {
     [DbContext(typeof(AvondaleDbContext))]
-    [Migration("20230615220626_update")]
-    partial class update
+    [Migration("20230726225102_added everything")]
+    partial class addedeverything
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.16")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -110,18 +110,29 @@ namespace Avondale_College_Shop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Phone")
                         .HasColumnType("int");
 
                     b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Suburb")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -148,15 +159,12 @@ namespace Avondale_College_Shop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProductId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("ShipDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ShipmentID")
-                        .HasColumnType("int");
+                    b.Property<string>("Suburb")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ToCity")
                         .IsRequired()
@@ -173,8 +181,6 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.HasIndex("ShipmentID");
-
                     b.ToTable("Order");
                 });
 
@@ -186,20 +192,14 @@ namespace Avondale_College_Shop.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductID"), 1L, 1);
 
-                    b.Property<int?>("OrderID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductItem")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Quantity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("ProductID");
-
-                    b.HasIndex("OrderID");
 
                     b.ToTable("Product");
                 });
@@ -220,10 +220,6 @@ namespace Avondale_College_Shop.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PackingCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProductId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -315,12 +311,10 @@ namespace Avondale_College_Shop.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -357,12 +351,10 @@ namespace Avondale_College_Shop.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -370,6 +362,36 @@ namespace Avondale_College_Shop.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderID", "ProductID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderProduct");
+                });
+
+            modelBuilder.Entity("OrderShipment", b =>
+                {
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShipmentID")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderID", "ShipmentID");
+
+                    b.HasIndex("ShipmentID");
+
+                    b.ToTable("OrderShipment");
                 });
 
             modelBuilder.Entity("ProductShipment", b =>
@@ -392,17 +414,6 @@ namespace Avondale_College_Shop.Migrations
                     b.HasOne("Avondale_College_Shop.Models.Customer", null)
                         .WithMany("OrderID")
                         .HasForeignKey("CustomerID");
-
-                    b.HasOne("Avondale_College_Shop.Models.Shipment", null)
-                        .WithMany("OrderID")
-                        .HasForeignKey("ShipmentID");
-                });
-
-            modelBuilder.Entity("Avondale_College_Shop.Models.Product", b =>
-                {
-                    b.HasOne("Avondale_College_Shop.Models.Order", null)
-                        .WithMany("ProductID")
-                        .HasForeignKey("OrderID");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -456,6 +467,36 @@ namespace Avondale_College_Shop.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("OrderProduct", b =>
+                {
+                    b.HasOne("Avondale_College_Shop.Models.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Avondale_College_Shop.Models.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("OrderShipment", b =>
+                {
+                    b.HasOne("Avondale_College_Shop.Models.Order", null)
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Avondale_College_Shop.Models.Shipment", null)
+                        .WithMany()
+                        .HasForeignKey("ShipmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("ProductShipment", b =>
                 {
                     b.HasOne("Avondale_College_Shop.Models.Product", null)
@@ -472,16 +513,6 @@ namespace Avondale_College_Shop.Migrations
                 });
 
             modelBuilder.Entity("Avondale_College_Shop.Models.Customer", b =>
-                {
-                    b.Navigation("OrderID");
-                });
-
-            modelBuilder.Entity("Avondale_College_Shop.Models.Order", b =>
-                {
-                    b.Navigation("ProductID");
-                });
-
-            modelBuilder.Entity("Avondale_College_Shop.Models.Shipment", b =>
                 {
                     b.Navigation("OrderID");
                 });
