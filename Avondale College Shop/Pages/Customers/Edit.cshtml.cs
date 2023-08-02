@@ -43,7 +43,7 @@ namespace Avondale_College_Shop.Pages.Customers
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 return Page();
             }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Avondale_College_Shop.Pages.Customers
 {
@@ -18,6 +19,9 @@ namespace Avondale_College_Shop.Pages.Customers
         {
             _context = context;
         }
+
+        [Phone]
+        public string PhoneNumber { get; set; }
 
         public IList<Customer> Customer { get;set; } = default!;
 
