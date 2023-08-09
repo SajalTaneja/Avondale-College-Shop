@@ -10,7 +10,7 @@ namespace Avondale_College_Shop.Models
         public string ToStreet { get; set; }
         public string Suburb { get; set; }
         public string ToCity { get; set; }
-        public int ToZip { get; set; }
+        public string ToZip { get; set; }
         public DateTime ShipDate { get; set; }
 
         public ICollection<Product> Product { get; set; }

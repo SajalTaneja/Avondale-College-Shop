@@ -13,10 +13,13 @@ namespace Avondale_College_Shop.Models
         public string Street { get; set; }
         public string Suburb { get; set; }
         public string City { get; set; }
-        public int Zip { get; set; }
-        public int Phone { get; set; }
+        public string Zip { get; set; }
+        [DataType(DataType.PostalCode)]
+        public string Phone { get; set; }
+        [DataType(DataType.PhoneNumber)]
         [StringLength(50, MinimumLength = 8)]
         public string Email { get; set; }
+        [DataType(DataType.EmailAddress)]
 
         public ICollection<Order> OrderID { get; set; }
     }

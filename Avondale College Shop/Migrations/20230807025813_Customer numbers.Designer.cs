@@ -4,6 +4,7 @@ using Avondale_College_Shop.Areas.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avondale_College_Shop.Migrations
 {
     [DbContext(typeof(AvondaleDbContext))]
-    partial class AvondaleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230807025813_Customer numbers")]
+    partial class Customernumbers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,9 +176,8 @@ namespace Avondale_College_Shop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ToZip")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ToZip")
+                        .HasColumnType("int");
 
                     b.HasKey("OrderID");
 
