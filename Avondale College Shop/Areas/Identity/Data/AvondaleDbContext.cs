@@ -25,6 +25,11 @@ public class AvondaleDbContext : IdentityDbContext<AvondaleCollegeShopUser>
 
     }
 
+    internal static object Initialize(AvondaleDbContext context, UserManager<IdentityUser> userMgr, RoleManager<IdentityRole> roleMgr)
+    {
+        throw new NotImplementedException();
+    }
+
     private class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<AvondaleCollegeShopUser>
     {
         public void Configure(EntityTypeBuilder<AvondaleCollegeShopUser> builder)

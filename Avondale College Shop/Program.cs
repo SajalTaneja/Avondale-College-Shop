@@ -12,9 +12,20 @@ var connectionString = builder.Configuration.GetConnectionString("AvondaleDbCont
 builder.Services.AddDbContext<AvondaleDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddIdentity<AvondaleCollegeShopUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<AvondaleDbContext>().AddDefaultTokenProviders();
+//builder.Services.AddIdentity<AvondaleCollegeShopUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+//    .AddRoles<IdentityRole>()
+//    .AddEntityFrameworkStores<AvondaleDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(
+options => {
+    options.Stores.MaxLengthForKeys = 128;
+})
+.AddEntityFrameworkStores<AvondaleDbContext>()
+.AddRoles<IdentityRole>()
+.AddDefaultUI()
+.AddDefaultTokenProviders();
+
+builder.Services.AddRazorPages();
 
 // Add services to the container.
 
@@ -38,4 +49,17 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<AvondaleDbContext>();
+
+    context.Database.Migrate();
+
+    var userMgr = services.GetRequiredService<UserManager<IdentityUser>>();
+    var roleMgr = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+    IdentitySeedData.Initialize(context, userMgr, roleMgr).Wait();
+}
 app.Run();
