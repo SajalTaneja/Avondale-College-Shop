@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Avondale_College_Shop.Pages.Customers
 {
-    [Authorize (Roles = "Admin")]
+    [Authorize]
        public class IndexModel : PageModel
     {
         private readonly Avondale_College_Shop.Areas.Identity.Data.AvondaleDbContext _context;

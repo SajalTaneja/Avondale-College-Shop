@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avondale_College_Shop.Migrations
 {
     [DbContext(typeof(AvondaleDbContext))]
-    [Migration("20230828031717_IdentitySeedData")]
-    partial class IdentitySeedData
+    [Migration("20230831211549_identity")]
+    partial class identity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

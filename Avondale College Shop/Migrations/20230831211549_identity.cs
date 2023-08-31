@@ -4,7 +4,7 @@
 
 namespace Avondale_College_Shop.Migrations
 {
-    public partial class IdentitySeedData : Migration
+    public partial class identity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
