@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Avondale_College_Shop.Pages
 {
-    public class BlazerModel : PageModel
+    public class JUniformModel : PageModel
     {
         public void OnGet()
         {
