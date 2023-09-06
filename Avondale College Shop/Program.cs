@@ -2,17 +2,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 
-
-
-internal class Program
-{
-    private static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
-
-        builder.Services.AddRazorPages();
-
-        var connectionString = builder.Configuration.GetConnectionString("AvondaleDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AvondaleDbContextConnection' not found.");
         builder.Services.AddDbContext<AvondaleDbContext>(options =>
             options.UseSqlServer(connectionString));
 
