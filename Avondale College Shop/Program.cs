@@ -2,6 +2,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 
+{
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        var connectionString = builder.Configuration.GetConnectionString("AvondaleDbContextConnection");
+
         builder.Services.AddDbContext<AvondaleDbContext>(options =>
             options.UseSqlServer(connectionString));
 

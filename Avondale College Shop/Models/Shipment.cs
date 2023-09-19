@@ -3,6 +3,7 @@
     public class Shipment
     {
         public int ShipmentID { get; set; }
+
         public DateTime CardChargeTime { get; set; }
         public string PackingCode { get; set; }
         public DateTime ShipOrderTime { get; set; }

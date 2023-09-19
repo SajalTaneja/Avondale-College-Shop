@@ -6,6 +6,7 @@ namespace Avondale_College_Shop.Models
     {
         [Key] 
         public int ProductID { get; set; }
+        [Range (1,10, ErrorMessage="Please enter a value between 1 to 10")]
         public int Quantity { get; set; }
         public string ProductItem { get; set; }
 

@@ -31,7 +31,12 @@ namespace Avondale_College_Shop.Pages.Orders
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (ModelState.IsValid || _context.Order == null || Order == null)
+            if (Order.ShipDate <= DateTime.Now)
+            {
+                ModelState.AddModelError("", "Order date cannot be in the past");
+                return Page();
+            }
+            if (ModelState.IsValid || _context.Order == null || Order == null)
             {
                 return Page();
             }
