@@ -17,7 +17,7 @@ namespace Avondale_College_Shop.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.20")
+                .HasAnnotation("ProductVersion", "6.0.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -141,7 +141,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasKey("CustomerID");
 
-                    b.ToTable("Customer", (string)null);
+                    b.ToTable("Customer");
                 });
 
             modelBuilder.Entity("Avondale_College_Shop.Models.Order", b =>
@@ -182,7 +182,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Order", (string)null);
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("Avondale_College_Shop.Models.Product", b =>
@@ -202,7 +202,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("Avondale_College_Shop.Models.Shipment", b =>
@@ -229,7 +229,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasKey("ShipmentID");
 
-                    b.ToTable("Shipment", (string)null);
+                    b.ToTable("Shipment");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -377,7 +377,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasIndex("ProductID");
 
-                    b.ToTable("OrderProduct", (string)null);
+                    b.ToTable("OrderProduct");
                 });
 
             modelBuilder.Entity("OrderShipment", b =>
@@ -392,7 +392,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasIndex("ShipmentID");
 
-                    b.ToTable("OrderShipment", (string)null);
+                    b.ToTable("OrderShipment");
                 });
 
             modelBuilder.Entity("ProductShipment", b =>
@@ -407,7 +407,7 @@ namespace Avondale_College_Shop.Migrations
 
                     b.HasIndex("ShipmentID");
 
-                    b.ToTable("ProductShipment", (string)null);
+                    b.ToTable("ProductShipment");
                 });
 
             modelBuilder.Entity("Avondale_College_Shop.Models.Order", b =>

@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avondale_College_Shop.Migrations
 {
     [DbContext(typeof(AvondaleDbContext))]
-    [Migration("20230807025813_Customer numbers")]
-    partial class Customernumbers
+    [Migration("20231017004353_register ")]
+    partial class register
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.20")
+                .HasAnnotation("ProductVersion", "6.0.21")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -176,8 +176,9 @@ namespace Avondale_College_Shop.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ToZip")
-                        .HasColumnType("int");
+                    b.Property<string>("ToZip")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("OrderID");
 

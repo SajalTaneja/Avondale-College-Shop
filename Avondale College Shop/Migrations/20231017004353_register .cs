@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Avondale_College_Shop.Migrations
 {
-    public partial class removedeverything : Migration
+    public partial class register : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -61,8 +61,8 @@ namespace Avondale_College_Shop.Migrations
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Suburb = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Zip = table.Column<int>(type: "int", maxLength: 4, nullable: false),
-                    Phone = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    Zip = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
@@ -216,7 +216,7 @@ namespace Avondale_College_Shop.Migrations
                     ToStreet = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Suburb = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ToCity = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ToZip = table.Column<int>(type: "int", nullable: false),
+                    ToZip = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ShipDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CustomerID = table.Column<int>(type: "int", nullable: true)
                 },
