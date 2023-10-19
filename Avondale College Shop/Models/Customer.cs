@@ -6,10 +6,10 @@ namespace Avondale_College_Shop.Models
     {
         public int CustomerID { get; set; }
 
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 3)]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
-        [StringLength(50, MinimumLength = 2)]
+        [StringLength(50, MinimumLength = 3)]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string Street { get; set; }

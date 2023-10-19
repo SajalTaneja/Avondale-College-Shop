@@ -71,12 +71,12 @@ namespace Avondale_College_Shop.Areas.Identity.Pages.Account
         {
             [Required]
             [StringLength(155,ErrorMessage= "The first name should have a maximum of 155 charcters")]
-            [Display(Name="FirstName")]
+            [Display(Name="First Name")]
             public string FirstName { get; set; }
 
             [Required]
             [StringLength(155, ErrorMessage = "The first name should have a maximum of 155 charcters")]
-            [Display(Name = "LastName")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
 

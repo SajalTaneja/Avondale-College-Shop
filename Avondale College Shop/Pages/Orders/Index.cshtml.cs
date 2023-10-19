@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Avondale_College_Shop.Areas.Identity.Data;
 using Avondale_College_Shop.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Avondale_College_Shop.Pages.Orders
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly Avondale_College_Shop.Areas.Identity.Data.AvondaleDbContext _context;
